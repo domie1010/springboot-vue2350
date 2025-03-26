@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.MiaoshashangpinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.MiaoshashangpinEntity" id="miaoshashangpinMap">
+        <result property="shangpinmingcheng" column="shangpinmingcheng"/>
+        <result property="shangpinfenlei" column="shangpinfenlei"/>
+        <result property="pinpai" column="pinpai"/>
+        <result property="tupian" column="tupian"/>
+        <result property="shangpinxiangqing" column="shangpinxiangqing"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="shangjiariqi" column="shangjiariqi"/>
+        <result property="onelimittimes" column="onelimittimes"/>
+        <result property="alllimittimes" column="alllimittimes"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="reversetime" column="reversetime"/>
+        <result property="price" column="price"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.MiaoshashangpinVO" >
+		SELECT * FROM miaoshashangpin  miaoshashangpin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.MiaoshashangpinVO" >
+		SELECT  miaoshashangpin.* FROM miaoshashangpin  miaoshashangpin 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.MiaoshashangpinView" >
+
+		SELECT  miaoshashangpin.* FROM miaoshashangpin  miaoshashangpin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.MiaoshashangpinView" >
+		SELECT * FROM miaoshashangpin  miaoshashangpin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
